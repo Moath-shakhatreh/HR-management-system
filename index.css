@@ -1,4 +1,54 @@
-h1 {
-    word-spacing: 50px;
-    break-insi;
+body {
+    margin:0 ;
+    /* display: flex;
+    flex-direction:column ; */
+}
+#main {
+    padding-top: 2%;
+    display: flex;
+    flex-direction: column;
+
+background-color: rgb(215, 209, 220);
+}
+#h1 {
+    font-size:300%;
+    font-style: italic;
+    margin:0 ;
+    text-align: center;
+    word-spacing: 200px;
+    padding-right: 30%;
+    background-color: antiquewhite;
+}
+
+#sec1 {
+    margin-top: 3%;
+    margin-right: 86.4%;
+    background-color: rgb(31, 130, 97);
+    
+}
+#footer {
+
+background-color: antiquewhite;
+}
+footer  h3 {
+    
+    text-align: center;
+}
+
+#form label {
+    font-size: 130%;
+
+} 
+
+#Image {
+    width: 20% ;
+}
+#Department {
+    width: 20.5%;
+}
+#Name {
+    width: 20%;
+}
+#Level {
+    width: 20.4%;
 }
