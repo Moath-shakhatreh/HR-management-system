@@ -5,33 +5,65 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Climate+Crisis&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./index.css">
 </head>
 <body>
 
     
-
 <header>
-
-    <h1> Home About</h1>
-
-
-
+    <h1 id="h1"> Home About</h1>
 </header>
 
-<main>
+<main id="main">
 
-    <script  src='./app.js'></script>
+    <p id="EmploymentDetails">Employment details:</p>
+
+    <form id="form">
+
+    <label for="Name">Name:</label><br>
+    <input type="text" id="Name" value=""><br>
+
+    <label for="Department">Department:</label><br>
+    <select name="Department" id="Department" >
+        <option value="Administration">Administration</option> 
+        <option value="Marketing">Marketing</option>
+        <option value="Development">Development</option>
+        <option value="Finance">Finance</option>
+    </select> <br>
+
+
+    <label for="Level">Level:</label><br>
+    <select name="Level" id="Level" >
+        <option value="Junior">Junior</option> 
+        <option value="Mid-Senior">Mid-Senior</option>
+        <option value="Senior">Senior</option>
+    </select> <br>
+
+    <label for="Image">Image url</label><br>
+    <input type="text" id="Image" value=""><br>
+
+    <input type="submit" value="Submit"> <br>
+</form> <br>
+
+<nav id="nav1">
+<section id="sec1"></section>
+<section id="sec2"></section>
+<section id="sec3"></section>
+<section id="sec4"></section>
+</nav>
 
 </main>
 
-<footer>
-    <h2><a href="">Facebook </a><a href="">Twitter </a><a href="">Instegram</a></h2>
-    <h3>©2022. All Rights Reserved</h3>
-
-
-
+<footer id="footer">
+    <p id="h2f">Cntact Us! <br><a href="">Facebook </a><br><a href="">Twitter </a><br><a href="">Instegram</a></p>
+    <h3 id="h3f">©2022. All Rights Reserved</h3>
 </footer>
+
+<script  src='./app.js'></script>
+
 
 </body>
 </html>
