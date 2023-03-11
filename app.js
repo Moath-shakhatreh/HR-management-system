@@ -1,8 +1,9 @@
 'use strict';
 
-let sectionEl = document.getElementById("sec1");
-let sectionE02 = document.getElementById('sec2');
-// let sectionE01 = document.getElementById('sec01')
+let sectionE1 = document.getElementById("sec1");
+let sectionE2 = document.getElementById('sec2');
+let sectionE3 = document.getElementById('sec3');
+let sectionE4 = document.getElementById('sec4');
 let form = document.getElementById("form");
 
 
@@ -51,7 +52,7 @@ EmployManagmantSystem.prototype.render = function () {
 // Image
 let imgEl = document.createElement('img');
 imgEl.src = this.ImagrURL;
-imgEl.style.width = '200px' ;
+imgEl.style.widows = '200px' ;
 imgEl.style.height = '200px'; 
 
 
@@ -68,15 +69,35 @@ Level.textContent = `Level: ${this.Level}`;
 let Salary = document.createElement('p');
 Salary.textContent = `${this.NetSalary()}`;
 
-function call (){
-sectionEl.appendChild(imgEl);
-sectionEl.appendChild(Name); 
-sectionEl.appendChild(idNUm);
-sectionEl.appendChild(Department);
-sectionEl.appendChild(Level);
-sectionEl.appendChild(Salary);
-}
-call();
+if(this.Department == 'Administration'){
+sectionE1.appendChild(imgEl);
+sectionE1.appendChild(Name); 
+sectionE1.appendChild(idNUm);
+sectionE1.appendChild(Department);
+sectionE1.appendChild(Level);
+sectionE1.appendChild(Salary);
+}else if(this.Department == 'Marketing'){
+sectionE2.appendChild(imgEl);
+sectionE2.appendChild(Name); 
+sectionE2.appendChild(idNUm);
+sectionE2.appendChild(Department);
+sectionE2.appendChild(Level);
+sectionE2.appendChild(Salary);
+}else if(this.Department == 'Development'){
+sectionE3.appendChild(imgEl);
+sectionE3.appendChild(Name); 
+sectionE3.appendChild(idNUm);
+sectionE3.appendChild(Department);
+sectionE3.appendChild(Level);
+sectionE3.appendChild(Salary);
+}else if(this.Department == 'Finance'){
+sectionE4.appendChild(imgEl);
+sectionE4.appendChild(Name); 
+sectionE4.appendChild(idNUm);
+sectionE4.appendChild(Department);
+sectionE4.appendChild(Level);
+sectionE4.appendChild(Salary);
+        }
 
 }
 
