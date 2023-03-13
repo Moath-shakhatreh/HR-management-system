@@ -138,8 +138,88 @@ form.addEventListener("submit",submitHandler);
         console.log(Name,Department,Level,Image)
         let employeeDet = new EmployManagmantSystem(idNUm,Name,Department,Level,Image);
         employeeDet.render(); 
+        saveData(employees);
     }
 
-    employeesDetails();
+    // employeesDetails();
     
+
+function saveData(data){
+    let stringArr = JSON.stringify(data);
+    localStorage.setItem('employees',stringArr);
+}
+
+function getData (){
+    let retreiveArr = localStorage.getItem('employees');
+    let objArr = JSON.parse(retreiveArr);
+    if (objArr != null){
+        for (let i = 7; i < objArr.length; i++) {
+            new EmployManagmantSystem(objArr[i].EmployeeID,objArr[i].FullName,objArr[i].Department,objArr[i].Level,objArr[i].ImagrURL);
+        }
+    }
+    
+}
+
+
+getData();
+employeesDetails();
+
+
+function numberA () {
+    let admN = 0;
+    for(let i = 0;i<employees.length;i++){
+        if (employees[i].Department == 'Administration'){
+            admN = admN + 1;
+        }else {
+
+        }
+    }
+    return admN;
+}
+export let nA =numberA();
+
+function numberM () {
+    let admN = 0;
+    for(let i = 0;i<employees.length;i++){
+        if (employees[i].Department == 'Marketing'){
+            admN = admN + 1;
+        }else {
+
+        }
+    }
+    return admN;
+}
+let nM =numberM();
+
+function numberF () {
+    let admN = 0;
+    for(let i = 0;i<employees.length;i++){
+        if (employees[i].Department == 'Finance'){
+            admN = admN + 1;
+        }else {
+
+        }
+    }
+    return admN;
+}
+let nF = numberF();
+
+function numberD () {
+    let admN = 0;
+    for(let i = 0;i<employees.length;i++){
+        if (employees[i].Department == 'Development'){
+            admN = admN + 1;
+        }else {
+
+        }
+    }
+    return admN;
+}
+const nD = numberD();
+
+
+
+
+
+
 
