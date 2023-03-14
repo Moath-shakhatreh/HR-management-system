@@ -7,6 +7,9 @@ let sectionE4 = document.getElementById('sec4');
 let form = document.getElementById("form");
 
 
+
+
+
 let employees = [];
 function EmployManagmantSystem(EmployeeID,FullName,Department,Level,ImagrURL){
     this.EmployeeID = EmployeeID;
@@ -45,12 +48,7 @@ EmployManagmantSystem.prototype.salaryC = function () {
         return (sal*0.925);
     }
 
-// let avgSalary = [];
-// EmployManagmantSystem.prototype.AvgSal = function (){
-//     for (let i = 0; i < employees.length ;i++) {
-//         avgSalary[i]= this.NetSalary();
-//     }
-// }    
+  
 
 
 
@@ -97,6 +95,7 @@ form.addEventListener("submit",submitHandler);
         let Image = event.target.Image.value;
         console.log(Name,Department,Level,Image)
         let employeeDet = new EmployManagmantSystem(idNUm,Name,Department,Level,Image);
+        employeeDet.salaryC();
         employeeDet.render(); 
         saveData(employees);
     }
@@ -119,15 +118,10 @@ function getData (){
     
 }
 
+
 getData();
-saveData(employees);
 employeesDetails();
+saveData(employees);
 
-// console.log(avgSalary)
 
-// function saveData1(data){
-//     let stringArr = JSON.stringify(data);
-//     localStorage.setItem('avgSalary',stringArr);
-// }
-// saveData1(avgSalary);
 

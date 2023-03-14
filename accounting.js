@@ -9,6 +9,26 @@ let row52 = document.getElementById('5-2');
 let r52 = document.createElement('p');
 let row62 = document.getElementById('6-2');
 let r62 = document.createElement('p');
+let row23 = document.getElementById('2-3');
+let r23 = document.createElement('p');
+let row33 = document.getElementById('3-3');
+let r33 = document.createElement('p');
+let row43 = document.getElementById('4-3');
+let r43 = document.createElement('p');
+let row53 = document.getElementById('5-3');
+let r53 = document.createElement('p');
+let row63 = document.getElementById('6-3');
+let r63 = document.createElement('p');
+let row24 = document.getElementById('2-4');
+let r24 = document.createElement('p');
+let row34 = document.getElementById('3-4');
+let r34 = document.createElement('p');
+let row44 = document.getElementById('4-4');
+let r44 = document.createElement('p');
+let row54 = document.getElementById('5-4');
+let r54 = document.createElement('p');
+let row64 = document.getElementById('6-4');
+let r64 = document.createElement('p');
 
 
 
@@ -17,15 +37,7 @@ function getData (){
 let retreiveArr = localStorage.getItem('employees');
 return JSON.parse(retreiveArr);
 }
-let employees1 = getData();
-
-
-// function getData1 (){
-//     let retreiveArr = localStorage.getItem('avgSalary');
-//     return JSON.parse(retreiveArr);
-//     }
-//     let avgSalary = getData1();
-//  console.log(avgSalary);
+let employees = getData();
 
 
 
@@ -33,14 +45,14 @@ let employees1 = getData();
 function numOfEmployee (){
     let DevN = 0, MarN = 0, FinN= 0, AdmN= 0;
 
-for (let i = 0; i < employees1.length; i++) {
-    if (employees1[i].Department == "Development") {
+for (let i = 0; i < employees.length; i++) {
+    if (employees[i].Department == "Development") {
         DevN +=1;
-    }else if (employees1[i].Department == "Marketing") {
+    }else if (employees[i].Department == "Marketing") {
         MarN +=1;
-    }else if (employees1[i].Department == "Finance") {
+    }else if (employees[i].Department == "Finance") {
         FinN +=1;
-    }else if (employees1[i].Department == "Administration") {
+    }else if (employees[i].Department == "Administration") {
         AdmN +=1;
     }
 }
@@ -59,28 +71,44 @@ for (let i = 0; i < employees1.length; i++) {
 
 
 function AvarageSalary(){
-    let DevA = 0, MarA = 0, FinA= 0, AdmA= 0;
+    let DevS = 0, MarS = 0, FinS= 0, AdmS= 0;
     let DevN = 0, MarN = 0, FinN= 0, AdmN= 0;
-    for (let i = 0; i < employees1.length; i++) {
-        if (employees1[i].Department == "Development") {
-            DevA +=avgSalary[i];
-            DevN +=1;
-        }else if (employees1[i].Department == "Marketing") {
-            MarA +=avgSalary[i];
-            MarN +=1
-        }else if (employees1[i].Department == "Finance") {
-            FinA +=avgSalary[i];
-            FinN +=1
-        }else if (employees1[i].Department == "Administration") {
-            AdmA +=avgSalary[i];
+    for (let i = 0; i < employees.length; i++) {
+        if (employees[i].Department == "Development") {
+            DevS += employees[i].salary;
+            DevN +=1;;
+        }else if (employees[i].Department == "Marketing") {
+            MarS += employees[i].salary;
+            MarN +=1;
+        }else if (employees[i].Department == "Finance") {
+            FinS += employees[i].salary;
+            FinN +=1;
+        }else if (employees[i].Department == "Administration") {
+            AdmS += employees[i].salary;
             AdmN +=1;
         }
     }
-    DevA=DevA/DevN;
-    MarA=MarA/MarN;
-    FinA=FinA/FinN;
-    AdmA=AdmA/AdmN;
-    console.log(DevA=DevA/DevN,MarA=MarA/MarN,FinA=FinA/FinN,AdmA=AdmA/AdmN)
+    r23.innerHTML = `${AdmS/3}`;
+    row23.appendChild(r23);
+    r33.innerHTML = `${MarS/3}`;
+    row33.appendChild(r33);
+    r43.innerHTML = `${DevS/3}`;
+    row43.appendChild(r43);
+    r53.innerHTML = `${FinS/3}`;
+    row53.appendChild(r53);
+    r63.innerHTML = `${DevS/3+MarS/3+FinS/3+AdmS/3}`;
+    row63.appendChild(r63);
+
+    r24.innerHTML = `${AdmS}`;
+    row24.appendChild(r24);
+    r34.innerHTML = `${MarS}`;
+    row34.appendChild(r34);
+    r44.innerHTML = `${DevS}`;
+    row44.appendChild(r44);
+    r54.innerHTML = `${FinS}`;
+    row54.appendChild(r54);
+    r64.innerHTML = `${DevS+MarS+FinS+AdmS}`;
+    row64.appendChild(r64);
 }
 
 
@@ -88,3 +116,4 @@ function AvarageSalary(){
 
 
 numOfEmployee();
+AvarageSalary();
