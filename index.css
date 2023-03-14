@@ -5,14 +5,14 @@ body {
 }
 
 #h1 {
-    display: flex;
-    font-size:250%;
+    
+    font-size:400%;
     font-family: 'Courier New', Courier, monospace;
     margin:0;
     word-spacing: 200px;
-    padding-left: 5%;
-    background-color: #9DC08B;
-    color: #ffffff;
+    padding-left: 7%;
+    background-color: #2C3333;
+    color: #0E8388;
     text-shadow: 2px 2px 5px rgb(57, 245, 91);
     
 }
@@ -23,10 +23,11 @@ body {
     padding-bottom: 9%;
     display: flex;
     flex-direction: column;
-    background-color: #EDF1D6;
+    background-color: #2E4F4F;
 }
 
 #EmploymentDetails{
+    padding-left: 4%;
     font-size: 150%;
     font-style: italic;
     text-shadow: 2px 2px 5px rgb(57, 160, 245);
@@ -41,7 +42,7 @@ body {
 } 
 
 #form {
-
+padding-left: 4%;
 }
 
 #div1{
@@ -53,7 +54,7 @@ body {
 .card {
     box-sizing: border-box;
     border: 2px solid black;
-    background-color: #7fe589;
+    background-color: #CBE4DE;
     height: 360px;
     width: 290px;
     text-align: center;
@@ -89,7 +90,7 @@ body {
 
 #footer {
 display: flex;
-background-color: #609966;
+background-color: #0E8388;
 }
 
 footer  h3 {
@@ -101,7 +102,12 @@ footer  h3 {
     
 
 }
-
+#h2f {
+    font-size: 130%;
+    font-style: italic;
+    color: black;
+    margin-left: 1%;
+}
 
 
 #Image {
@@ -116,9 +122,4 @@ footer  h3 {
 #Level {
     width: 20.4%;
 }
-#h2f {
-    font-size: 130%;
-    font-style: italic;
-    color: black;
-    margin-left: 1%;
-}
+

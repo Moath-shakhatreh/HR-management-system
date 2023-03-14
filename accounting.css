@@ -1,0 +1,59 @@
+body {
+    margin:0 ;
+    display: flex;
+    flex-direction:column ;
+}
+#h1 {
+    display: flex;
+    font-size:400%;
+    font-family: 'Courier New', Courier, monospace;
+    margin:0;
+    word-spacing: 200px;
+    padding-left: 7%;
+    background-color: #2C3333;
+    color: #0E8388;
+    text-shadow: 2px 2px 5px rgb(57, 245, 91);
+    
+}
+
+main {
+    padding-left: 6%;
+    padding-top: 7%;
+    padding-bottom: 7%;
+    display: flex;
+    flex-direction: column;
+    background-color: #2E4F4F;
+}
+
+table ,tr, th, td{
+    border: 5px solid rgb(3, 57, 32);
+    border-collapse: collapse;
+    text-align: center;
+    width: 700px;
+    height: 70px;
+    color: #d4e3d8;
+
+}
+
+
+
+#footer {
+    display: flex;
+    background-color: #0E8388;
+    }
+    
+    footer  h3 {
+        margin-top: auto;
+        margin-bottom: auto;
+        margin-left: 35%;
+        color: #f0f4d5;
+        
+        
+    
+    }
+    #h2f {
+        font-size: 130%;
+        font-style: italic;
+        color: black;
+        margin-left: 1%;
+    }
