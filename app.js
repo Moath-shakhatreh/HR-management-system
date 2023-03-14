@@ -14,6 +14,7 @@ function EmployManagmantSystem(EmployeeID,FullName,Department,Level,ImagrURL){
     this.Department = Department;
     this.Level = Level;
     this.ImagrURL = ImagrURL;
+    this.salary=0;
     employees.push(this);
 }
 
@@ -25,18 +26,24 @@ let OmarZaid = new EmployManagmantSystem (1004,'OmarZaid','Development','Senior'
 let RanaSaleh = new EmployManagmantSystem (1005,'RanaSaleh','Development','Junior',"https://github.com/LTUC/amman-prep-d10/blob/main/Class-08/lab/assets/Rana.jpg?raw=true");
 let HadiAhmad = new EmployManagmantSystem (1006,'HadiAhmad','Finance','Mid-Senior',"https://github.com/LTUC/amman-prep-d10/blob/main/Class-08/lab/assets/Hadi.jpg?raw=true");
 
-EmployManagmantSystem.prototype.Salary = function () {
-if(this.Level== "Senior"){
-    let min=1500; let max=2000;
-    return Math.floor(Math.random() * (max - min) ) + min;
-}else if(this.Level == 'Mid-Senior'){
-    let min=1000; let max=1500;
-    return Math.floor(Math.random() * (max - min) ) + min;
-}else if(this.Level == 'Junior'){
-    let min=500; let max=1000;
-    return Math.floor(Math.random() * (max - min) ) + min;
-}
-}
+EmployManagmantSystem.prototype.salaryC = function () {
+    if(this.Level== 'Senior'){
+        this.salary = cal(1500,2000);
+    }else if(this.Level == 'Mid-Senior'){
+        this.salary = cal(1000,1500);
+    }else{
+        this.salary= cal(500,1000)    
+    };
+    this.salary = netSal(this.salary);
+    }
+    
+    function cal (min,max){
+        return (Math.floor(Math.random() * (max - min) ) + min);
+    }
+    
+    function netSal (sal){
+        return (sal*0.925);
+    }
 
 // let avgSalary = [];
 // EmployManagmantSystem.prototype.AvgSal = function (){
@@ -46,17 +53,6 @@ if(this.Level== "Senior"){
 // }    
 
 
-EmployManagmantSystem.prototype.NetSalary = function () {
-      return this.Salary()*0.925;
-}
-
-
-
-// function netSalary (Salary) {
-//     return this.Salary()*0.925;
-//     }
-
-
 
 EmployManagmantSystem.prototype.render = function () {
 
@@ -64,7 +60,7 @@ let divCard =document.createElement('div');
 divCard.innerHTML = `<div class='card'>
 <img src='${this.ImagrURL}' alt='img'>
 <p>Name: ${this.FullName} - ID: ${this.EmployeeID} Department: ${this.Department} - Level:${this.Level}
-${this.NetSalary()}</p> </div> `;
+${this.salary}</p> </div> `;
 div1.appendChild(divCard);
 
 }
@@ -74,6 +70,7 @@ div1.appendChild(divCard);
 function employeesDetails (){
 for(let i=0 ; i<employees.length ; i++){
 
+    employees[i].salaryC();
     employees[i].render();
 }
 }
