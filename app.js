@@ -6,8 +6,10 @@ function EmployManagmantSystem(EmployeeID,FullName,Department,Level,ImagrURL){
     this.department = Department;
     this.level = Level;
     this.imagrURL = ImagrURL;
-    this.salary=this.NetSalary;
+    this.salary= 0;
     employees.push(this);
+    
+    
     
 }
 
@@ -19,28 +21,28 @@ let OmarZaid = new EmployManagmantSystem (1004,'OmarZaid','Development','Senior'
 let RanaSaleh = new EmployManagmantSystem (1005,'RanaSaleh','Development','Junior');
 let HadiAhmad = new EmployManagmantSystem (1006,'HadiAhmad','Finance','Mid-Senior');
 
-EmployManagmantSystem.prototype.salaryCal = function () {
-    let s1;
+EmployManagmantSystem.prototype.salaryC = function () {
 if(this.Level== 'Senior'){
-    let min=1500; let max=2000;
-    return  (Math.floor(Math.random() * (max - min) ) + min); 
-    
+    this.salary = cal(1500,2000);
 }else if(this.Level == 'Mid-Senior'){
-    let min=1000; let max=1500;
-    return  (Math.floor(Math.random() * (max - min) ) + min); 
-    
-}else if(this.Level == 'Junior'){
-    let min=500; let max=1000;
-    return  (Math.floor(Math.random() * (max - min) ) + min);     
-}
+    this.salary = cal(1000,1500);
+}else{
+    this.salary= cal(500,1000)    
+};
+this.salary = netSal(this.salary);
 }
 
-EmployManagmantSystem.prototype.NetSalary =function() {
-return this.salaryCal*0.925;
+function cal (min,max){
+    return (Math.floor(Math.random() * (max - min) ) + min);
 }
+
+function netSal (sal){
+    return sal*0.925;
+}
+
 
 EmployManagmantSystem.prototype.render = function () {
-document.write(`Name:${this.fullName} & Salary = ${this.salary} `);
+document.write(`<h3>Name:${this.fullName} & Salary = ${this.salary}</h3>`);
 // document.write(`Salary = ${this.salary} `); 
 // document.write(`Net Salary = ${this.NetSalary()}`)
 }
@@ -48,17 +50,10 @@ document.write(`Name:${this.fullName} & Salary = ${this.salary} `);
 function employeesDetails (){
 for(let i=0 ; i<employees.length ; i++){
 
-    employees[i].NetSalary();
+    employees[i].salaryC();
     employees[i].render();
-    
-    
-    
-
 }
 }
 
 employeesDetails();
-// GhaziSamer.salaryCal();
-// GhaziSamer.render();
-// let min=1500; let max=2000;
-// console.log((Math.floor(Math.random() * (max - min) ) + min));
+
