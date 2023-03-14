@@ -38,8 +38,16 @@ if(this.Level== "Senior"){
 }
 }
 
+// let avgSalary = [];
+// EmployManagmantSystem.prototype.AvgSal = function (){
+//     for (let i = 0; i < employees.length ;i++) {
+//         avgSalary[i]= this.NetSalary();
+//     }
+// }    
+
+
 EmployManagmantSystem.prototype.NetSalary = function () {
-return this.Salary()*0.925;
+      return this.Salary()*0.925;
 }
 
 
@@ -52,8 +60,6 @@ return this.Salary()*0.925;
 
 EmployManagmantSystem.prototype.render = function () {
 
-
-
 let divCard =document.createElement('div');
 divCard.innerHTML = `<div class='card'>
 <img src='${this.ImagrURL}' alt='img'>
@@ -61,52 +67,9 @@ divCard.innerHTML = `<div class='card'>
 ${this.NetSalary()}</p> </div> `;
 div1.appendChild(divCard);
 
-// Image
-
-
-// OthersDetails
-// let Name = document.createElement('p');
-// Name.textContent = `Name: ${this.FullName}`;
-// let idNUm = document.createElement('p');
-// idNUm.textContent = `ID: ${this.EmployeeID}`;
-// let Department = document.createElement('p');
-// Department.textContent = `Department: ${this.Department}`;
-// let Level = document.createElement('p');
-// Level.textContent = `Level: ${this.Level}`;
-// let Salary = document.createElement('p');
-// Salary.textContent = `${this.NetSalary()}`;
-
-// if(this.Department == 'Administration'){
-// sectionE1.appendChild(imgEl);
-// sectionE1.appendChild(Name); 
-// sectionE1.appendChild(idNUm);
-// sectionE1.appendChild(Department);
-// sectionE1.appendChild(Level);
-// sectionE1.appendChild(Salary);
-// }else if(this.Department == 'Marketing'){
-// sectionE2.appendChild(imgEl);
-// sectionE2.appendChild(Name); 
-// sectionE2.appendChild(idNUm);
-// sectionE2.appendChild(Department);
-// sectionE2.appendChild(Level);
-// sectionE2.appendChild(Salary);
-// }else if(this.Department == 'Development'){
-// sectionE3.appendChild(imgEl);
-// sectionE3.appendChild(Name); 
-// sectionE3.appendChild(idNUm);
-// sectionE3.appendChild(Department);
-// sectionE3.appendChild(Level);
-// sectionE3.appendChild(Salary);
-// }else if(this.Department == 'Finance'){
-// sectionE4.appendChild(imgEl);
-// sectionE4.appendChild(Name); 
-// sectionE4.appendChild(idNUm);
-// sectionE4.appendChild(Department);
-// sectionE4.appendChild(Level);
-// sectionE4.appendChild(Salary);
-//         }
-
 }
+
+
 
 function employeesDetails (){
 for(let i=0 ; i<employees.length ; i++){
@@ -141,7 +104,6 @@ form.addEventListener("submit",submitHandler);
         saveData(employees);
     }
 
-    // employeesDetails();
     
 
 function saveData(data){
@@ -160,66 +122,15 @@ function getData (){
     
 }
 
-
 getData();
+saveData(employees);
 employeesDetails();
 
+// console.log(avgSalary)
 
-function numberA () {
-    let admN = 0;
-    for(let i = 0;i<employees.length;i++){
-        if (employees[i].Department == 'Administration'){
-            admN = admN + 1;
-        }else {
-
-        }
-    }
-    return admN;
-}
-export let nA =numberA();
-
-function numberM () {
-    let admN = 0;
-    for(let i = 0;i<employees.length;i++){
-        if (employees[i].Department == 'Marketing'){
-            admN = admN + 1;
-        }else {
-
-        }
-    }
-    return admN;
-}
-let nM =numberM();
-
-function numberF () {
-    let admN = 0;
-    for(let i = 0;i<employees.length;i++){
-        if (employees[i].Department == 'Finance'){
-            admN = admN + 1;
-        }else {
-
-        }
-    }
-    return admN;
-}
-let nF = numberF();
-
-function numberD () {
-    let admN = 0;
-    for(let i = 0;i<employees.length;i++){
-        if (employees[i].Department == 'Development'){
-            admN = admN + 1;
-        }else {
-
-        }
-    }
-    return admN;
-}
-const nD = numberD();
-
-
-
-
-
-
+// function saveData1(data){
+//     let stringArr = JSON.stringify(data);
+//     localStorage.setItem('avgSalary',stringArr);
+// }
+// saveData1(avgSalary);
 
