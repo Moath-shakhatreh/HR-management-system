@@ -22,9 +22,9 @@ let RanaSaleh = new EmployManagmantSystem (1005,'RanaSaleh','Development','Junio
 let HadiAhmad = new EmployManagmantSystem (1006,'HadiAhmad','Finance','Mid-Senior');
 
 EmployManagmantSystem.prototype.salaryC = function () {
-if(this.Level== 'Senior'){
+if(this.level== 'Senior'){
     this.salary = cal(1500,2000);
-}else if(this.Level == 'Mid-Senior'){
+}else if(this.level == 'Mid-Senior'){
     this.salary = cal(1000,1500);
 }else{
     this.salary= cal(500,1000)    
